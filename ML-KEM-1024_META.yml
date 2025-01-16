@@ -1,0 +1,37 @@
+name: ML-KEM-1024
+type: kem
+claimed-nist-level: 5
+claimed-security: IND-CCA2
+length-public-key: 1568
+length-ciphertext: 1568
+length-secret-key: 3168
+length-shared-secret: 32
+nistkat-sha256: f580d851e5fb27e6876e5e203fa18be4cdbfd49e05d48fec3d3992c8f43a13e6
+testvectors-sha256: 85ab251d6e749e6b27507a8a6ec473ba2e8419c1aef87d0cd5ec9903c1bb92df
+principal-submitters:
+  - Peter Schwabe
+auxiliary-submitters:
+  - Roberto Avanzi
+  - Joppe Bos
+  - Léo Ducas
+  - Eike Kiltz
+  - Tancrède Lepoint
+  - Vadim Lyubashevsky
+  - John M. Schanck
+  - Gregor Seiler
+  - Damien Stehlé
+implementations:
+  - name: cupqc
+    version: FIPS203
+    compile_opts: $<$<COMPILE_LANGUAGE:CUDA>:-rdc=true -dlto -arch=compute_70>
+    signature_keypair: ml_kem_1024_cupqc_keypair
+    signature_enc: ml_kem_1024_cupqc_enc
+    signature_dec: ml_kem_1024_cupqc_dec
+    sources:
+    supported_platforms:
+      - architecture: CUDA
+        operating_systems:
+          - Linux
+          - Darwin
+        required_flags:
+          - dummy

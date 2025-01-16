@@ -1,0 +1,37 @@
+name: ML-KEM-768
+type: kem
+claimed-nist-level: 3
+claimed-security: IND-CCA2
+length-public-key: 1184
+length-ciphertext: 1088
+length-secret-key: 2400
+length-shared-secret: 32
+nistkat-sha256: 5352539586b6c3df58be6158a6250aeff402bd73060b0a3de68850ac074c17c3
+testvectors-sha256: 2586721a714c439f6fef26e29ee1c4c67c6207186f810617f278e6ce3e67ea0d
+principal-submitters:
+  - Peter Schwabe
+auxiliary-submitters:
+  - Roberto Avanzi
+  - Joppe Bos
+  - Léo Ducas
+  - Eike Kiltz
+  - Tancrède Lepoint
+  - Vadim Lyubashevsky
+  - John M. Schanck
+  - Gregor Seiler
+  - Damien Stehlé
+implementations:
+  - name: cupqc
+    version: FIPS203
+    compile_opts: $<$<COMPILE_LANGUAGE:CUDA>:-rdc=true -dlto -arch=compute_70>
+    signature_keypair: ml_kem_768_cupqc_keypair
+    signature_enc: ml_kem_768_cupqc_enc
+    signature_dec: ml_kem_768_cupqc_dec
+    sources:
+    supported_platforms:
+      - architecture: CUDA
+        operating_systems:
+          - Linux
+          - Darwin
+        required_flags:
+          - dummy
