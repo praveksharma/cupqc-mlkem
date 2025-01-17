@@ -33,5 +33,3 @@ implementations:
         operating_systems:
           - Linux
           - Darwin
-        required_flags:
-          - dummy
