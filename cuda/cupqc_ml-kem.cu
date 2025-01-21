@@ -1,6 +1,3 @@
-#ifndef CUPQC_MLKEM_CU
-#define CUPQC_MLKEM_CU
-
 /*
  * Copyright 2025 Nvidia Corporation
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -199,5 +196,3 @@ extern "C" {
     }
 #endif
 }
-
-#endif
