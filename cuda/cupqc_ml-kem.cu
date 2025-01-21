@@ -1,3 +1,6 @@
+#ifndef CUPQC_MLKEM_CU
+#define CUPQC_MLKEM_CU
+
 /*
  * Copyright 2025 Nvidia Corporation
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -160,7 +163,7 @@ extern "C" {
     using KEM_768  = decltype(ML_KEM_768()  + Block());
     using KEM_1024 = decltype(ML_KEM_1024() + Block());
 
-#if defined(OQS_ENABLE_KEM_ml_kem_512_cupqc)
+#if defined(OQS_ENABLE_KEM_ml_kem_512_cuda)
     int cupqc_ml_kem_512_keypair(uint8_t *pk, uint8_t *sk) {
         return keypair<KEM_512>(pk, sk);
     }
@@ -172,7 +175,7 @@ extern "C" {
     }
 #endif
 
-#if defined(OQS_ENABLE_KEM_ml_kem_768_cupqc)
+#if defined(OQS_ENABLE_KEM_ml_kem_768_cuda)
     int cupqc_ml_kem_768_keypair(uint8_t *pk, uint8_t *sk) {
         return keypair<KEM_768>(pk, sk);
     }
@@ -184,7 +187,7 @@ extern "C" {
     }
 #endif
 
-#if defined(OQS_ENABLE_KEM_ml_kem_1024_cupqc)
+#if defined(OQS_ENABLE_KEM_ml_kem_1024_cuda)
     int cupqc_ml_kem_1024_keypair(uint8_t *pk, uint8_t *sk) {
         return keypair<KEM_1024>(pk, sk);
     }
@@ -196,3 +199,5 @@ extern "C" {
     }
 #endif
 }
+
+#endif
