@@ -156,7 +156,7 @@ cleanup:
 }
 
 extern "C" {
-    using KEM_512  = decltype(ML_KEM_512()  + Block());
+    using KEM_1024 = decltype(ML_KEM_1024() + Block());
 
 #if defined(OQS_ENABLE_KEM_ml_kem_1024_cuda)
     int cupqc_ml_kem_1024_keypair(uint8_t *pk, uint8_t *sk) {
