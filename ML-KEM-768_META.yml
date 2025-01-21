@@ -27,7 +27,7 @@ implementations:
     signature_keypair: cupqc_ml_kem_768_keypair
     signature_enc: cupqc_ml_kem_768_enc
     signature_dec: cupqc_ml_kem_768_dec
-    sources: ./cuda/ml-kem-768/cupqc_ml-kem.cu
+    sources: ./ml-kem-768/cupqc_ml-kem.cu
     supported_platforms:
       - architecture: CUDA
         operating_systems:
